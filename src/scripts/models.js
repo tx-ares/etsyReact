@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Backbone from 'backbone'
 
 //Step 1 - Load dependencies jQuery, Underscore, Backbone.
 
@@ -10,7 +11,7 @@ import ReactDOM from 'react-dom'
 //Step 4 - Render Home View.
 
 console.log("Hello wurld!")
-console.log($)
+// console.log($)
 
 
 
