@@ -1,7 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Models from './models.js'
 
-const Header = React.createClass({
+export const Body = React.createClass({
+		render: () => {
+			return <div>
+						<Header />
+						<AllListingsView />
+					</div>
+
+		}
+})
+
+
+export const Header = React.createClass({
 	render: () => {
 		return <header>
         			<h1><a href="#home">Riffsy</a></h1>
@@ -16,7 +28,7 @@ const Header = React.createClass({
 
 })
 
-const AllListingsView = React.createClass({
+export const AllListingsView = React.createClass({
 	_navToItem: function(evt){
 
 		var listingId = evt.currentTarget.getAttribute('id')
@@ -133,7 +145,3 @@ const AllListingsView = React.createClass({
 // 	}
 
 // })
-
-
-
-export default Views
