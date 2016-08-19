@@ -7,13 +7,17 @@ import Views from './views.js'
 
 const app = function() {
 
-	const Header = React.createClass({
+	const Body = React.createClass({
 		render: () => {
-			return <AllListingsView />
+			return <div>
+						<Header />
+						<AllListingsView />
+					</div>
+
 		}
 	})
 
-	ReactDOM.render(<Header/>,document.querySelector('.container'))
+	ReactDOM.render(<Body/>,document.querySelector('.container'))
 }
 
 app()

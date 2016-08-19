@@ -14,9 +14,7 @@ console.log("Hello wurld!")
 // console.log($)
 
 
-
-
-var AllListingsCollection = Backbone.Collection.extend({
+export const AllListingsCollection = Backbone.Collection.extend({
 
 	url: "https://openapi.etsy.com/v2/listings/active.js",
 	_key: "k4v6u445o5n237im8b03002u",
@@ -27,7 +25,7 @@ var AllListingsCollection = Backbone.Collection.extend({
 	}
 })
 
-var ListingModel = Backbone.Model.extend({
+export const ListingModel = Backbone.Model.extend({
 
 	url: function() {
 		return "https://openapi.etsy.com/v2/listings/" + this.listingId + ".js"
@@ -127,7 +125,7 @@ var searchEnter = function(eventObj){
 	}
 }
 
-document.querySelector(".searchBar").addEventListener('keydown', searchEnter)
+// document.querySelector(".searchBar").addEventListener('keydown', searchEnter)
 
 var rtr = new Router()
 
