@@ -5,6 +5,7 @@ import Models from './models.js'
 export const Body = React.createClass({
 		render: () => {
 			return <div>
+						{console.log("render fired!")}
 						<Header />
 						<AllListingsView />
 					</div>

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import {AllListingsCollection} from './models.js'
 import {ListingModel} from './models.js'
+
+import {Body} from './views.js'
 import Views from './views.js'
 
 
@@ -33,9 +35,11 @@ const app = function() {
 			}
 
 		}).then(function(jsonResp){
+			console.log(".then triggered!")
 			var allView = new AllListingsView(allColl) 
-			ReactDOM.render(<Body/>,document.querySelector('.container'))
-
+			// Somethings broke.
+			ReactDOM.render(<Body coll={allColl}/>,document.querySelector('.container'))
+			console.log("render qued.")
 		})
 	},
 
