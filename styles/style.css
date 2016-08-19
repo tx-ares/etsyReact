@@ -1,0 +1,62 @@
+
+#menu span{
+	font-size: 1em;
+	font-family: 'Roboto' sans-serif;
+	font-weight: bold;
+	color: darkgrey;
+	margin-right: 1em;
+}
+
+.listing{
+	display: flex;
+	flex-direction: column;
+}
+
+#list-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	background-color: rgba(221, 221, 221, 0.2);
+}
+div#list-wrapper > div {
+    width: 15%;
+    margin: 1em;
+    justify-content: center;
+    background-color: snow;
+}
+
+img {
+	text-align: center;
+    border: 1px solid #ddd;
+}
+
+.info, .title{
+	font-family: 'Roboto' helvetica sans-serif;
+	margin: 0.2em 0.5em;
+}
+
+.title {
+    font-size: 0.8em;
+    overflow: auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.info{
+	display: flex;
+	justify-content: space-between;
+}
+
+.info > div{
+	font-size: 0.7em;
+}
+
+.price{
+	color: cadetblue;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+}
+
+.shop-name{
+	letter-spacing: 0.07em;
+	color: grey;
+}
