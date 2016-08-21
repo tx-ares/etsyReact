@@ -8,6 +8,7 @@ export const Body = React.createClass({
 						{console.log("render fired!")}
 						<Header />
 						<Hamburguesa />
+						<Nav />
 						<MainImg />
 
 						<AllListingsView />
