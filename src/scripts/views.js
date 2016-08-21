@@ -7,7 +7,12 @@ export const Body = React.createClass({
 			return <div>
 						{console.log("render fired!")}
 						<Header />
+						<Hamburguesa />
+						<MainImg />
+
 						<AllListingsView />
+
+						<Footer />
 					</div>
 
 		}
@@ -16,12 +21,12 @@ export const Body = React.createClass({
 export const Footer = React.createClass({
 	render: () => {
 		return <footer>
-					<ul class="footer quickLinks">
+					<ul className="footer quickLinks">
             			<li><h5><a href="https://github.com/txsadamwest">Github</a></h5></li>
             			<li><h5><a href="https://medium.com/@txsadamwest">Blog</a></h5></li>
             			<li><h5><a href="mailto:a.huerta@gmail.com">Contact</a></h5></li>
             			<li><h5><a href="https://github.com/txsadamwest">Portfolio</a></h5></li>
-            			<p class="finePrint">&copy; TxsAdamWest 2016 All data is pulled from Etsy's API.  Very special thanks to them for letting me rip their api to make this. :) </p>
+            			<p className="finePrint">&copy; TxsAdamWest 2016 All data is pulled from Etsy's API.  Very special thanks to them for letting me rip their api to make this. :) </p>
         			</ul>
    				</footer>
 	}
@@ -29,10 +34,10 @@ export const Footer = React.createClass({
 
 export const MainImg = React.createClass({
 	render: () => {
-		return  <div class="mainImg">
-        				<img class="headlineImg" src="images/AsILayDyingwallpaper.jpg"></img>
-        			<div class="search">
-     					<input class="searchBar" type="text" placeholder="Search Riffsy" /><button class="searchButton">Search</button>
+		return  <div className="mainImg">
+        				<img className="headlineImg" src="images/AsILayDyingwallpaper.jpg"></img>
+        			<div className="search">
+     					<input className="searchBar" type="text" placeholder="Search Riffsy" /><button className="searchButton">Search</button>
        				</div>
     			</div>
 	}
@@ -55,7 +60,7 @@ export const Header = React.createClass({
 
 export const Hamburguesa = React.createClass({
 	render: () => {
-		return <div class="hamburguesa">
+		return <div className="hamburguesa">
         			<hr></hr>
         			<hr></hr>
         			<hr></hr>
@@ -66,7 +71,7 @@ export const Hamburguesa = React.createClass({
 export const Nav = React.createClass({
 	render: () => {
 		return  <nav>
-	        		<ul class="quickLinks">
+	        		<ul className="quickLinks">
 			            <li><a href="#search/guitars">Guitars</a></li>
 			            <li><a href="#search/music">Music</a></li>
 			            <li><a href="#search/guitar picks">Picks</a></li>
@@ -77,7 +82,7 @@ export const Nav = React.createClass({
 			            <li><a href="#search/music phone cases">Cases</a></li>
 	        		</ul>
 	        			{/* This may need to be moved.  Trying to consolidate components. */}
-	        		    <input type="checkbox" class="hamburguesa-menu-toggler"></input>
+	        		    <input type="checkbox" className="hamburguesa-menu-toggler"></input>
     			</nav>
 	}
 })
@@ -94,10 +99,7 @@ export const AllListingsView = React.createClass({
 	},
 
 	render: () => {
-		return <div class="listing" id={listingsArr[i].get('listing_id')}><img src="listingImgUrl"></img>
- 		  	<h5>  listingTitle </h5>
- 		  	<p class="style">{listingsArr[i].get('tags')[0]}{listingsArr[i].get('tags')[1]}</p>
- 		  	<button class="plus"></button><p class="price"> {listingsArr[i].get('price')}</p>
+		return <div> YEYEAH
  		  </div>
 	}
 })

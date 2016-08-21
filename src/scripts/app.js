@@ -27,6 +27,7 @@ const app = function() {
 	showAllListings: function() {
 		console.log("Routed to showAllListings")
 		var allColl = new AllListingsCollection()
+		console.log(allColl)
 		allColl.fetch({
 			dataType: 'jsonP',
 			data: {
@@ -34,12 +35,12 @@ const app = function() {
 				api_key: allColl._key,
 				keywords: 'rock music'
 			}
-
 		}).then(function(jsonResp){
 			console.log(".then triggered!")
+			console.log(jsonResp, "<<< Search Results")
 			var allView = new AllListingsView(allColl) 
 			// Somethings broke.
-			ReactDOM.render(<Body coll={allColl}/>,document.querySelector('.container'))
+			ReactDOM.render(<Body allColl={allColl}/>,document.querySelector('.container'))
 			console.log("render qued.")
 		})
 	},
