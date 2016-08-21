@@ -87,11 +87,9 @@ export const Nav = React.createClass({
 	}
 })
 
-    
 export const AllListingsView = React.createClass({
 
 	_navToItem: function(evt){
-
 		var listingId = evt.currentTarget.getAttribute('id')
 		console.log(listingId, "<<<<<< listingId is ")
 
@@ -99,10 +97,17 @@ export const AllListingsView = React.createClass({
 	},
 
 	render: () => {
-		return <div> YEYEAH
+		// console.log(props, "<<< Props")
+		return <div>
+				CHECK!
  		  </div>
 	}
 })
+
+ // className="listing" id={props.allColl[i].get('listing_id')}><img src="listingImgUrl"></img>
+ // 		  	<h5>  listingTitle </h5>
+ // 		  	<p className="style">{props.allColl[i].get('tags')[0]}{props.allColl[i].get('tags')[1]}</p>
+ // 		  	<button className="plus"></button><p className="price"> {props.allColl[i].get('price')}</p>
 
 // ******************************************* //  
 

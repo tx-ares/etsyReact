@@ -28,6 +28,8 @@ const app = function() {
 		console.log("Routed to showAllListings")
 		var allColl = new AllListingsCollection()
 		console.log(allColl)
+		
+		//Add jsonP for bypassing restrictions, as well as a data query to bring back our default search value.
 		allColl.fetch({
 			dataType: 'jsonP',
 			data: {
@@ -35,14 +37,11 @@ const app = function() {
 				api_key: allColl._key,
 				keywords: 'rock music'
 			}
-		}).then(function(jsonResp){
-			console.log(".then triggered!")
-			console.log(jsonResp, "<<< Search Results")
-			var allView = new AllListingsView(allColl) 
+		}) 
 			// Somethings broke.
+			console.log(allColl, "<<< Data fetched.")
 			ReactDOM.render(<Body allColl={allColl}/>,document.querySelector('.container'))
 			console.log("render qued.")
-		})
 	},
 
 	showItemListing: function(listingId) {
