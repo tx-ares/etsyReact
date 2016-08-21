@@ -5,6 +5,7 @@ import {AllListingsCollection} from './models.js'
 import {ListingModel} from './models.js'
 
 import {Body} from './views.js'
+import {AllListingsView} from './views.js'
 import Views from './views.js'
 
 

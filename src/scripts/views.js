@@ -13,6 +13,22 @@ export const Body = React.createClass({
 		}
 })
 
+export const Footer = React.createClass({
+	render: () => {
+		return <footer>
+					<ul class="footer quickLinks">
+            			<li><h5><a href="https://github.com/txsadamwest">Github</a></h5></li>
+            			<li><h5><a href="https://medium.com/@txsadamwest">Blog</a></h5></li>
+            			<li><h5><a href="mailto:a.huerta@gmail.com">Contact</a></h5></li>
+            			<li><h5><a href="https://github.com/txsadamwest">Portfolio</a></h5></li>
+            			<p class="finePrint">&copy; TxsAdamWest 2016 All data is pulled from Etsy's API.  Very special thanks to them for letting me rip their api to make this. :) </p>
+        			</ul>
+   				</footer>
+	}
+})
+
+
+
 
 export const Header = React.createClass({
 	render: () => {
@@ -30,6 +46,7 @@ export const Header = React.createClass({
 })
 
 export const AllListingsView = React.createClass({
+
 	_navToItem: function(evt){
 
 		var listingId = evt.currentTarget.getAttribute('id')
