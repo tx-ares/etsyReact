@@ -27,8 +27,16 @@ export const Footer = React.createClass({
 	}
 })
 
-
-
+export const MainImg = React.createClass({
+	render: () => {
+		return  <div class="mainImg">
+        				<img class="headlineImg" src="images/AsILayDyingwallpaper.jpg"></img>
+        			<div class="search">
+     					<input class="searchBar" type="text" placeholder="Search Riffsy" /><button class="searchButton">Search</button>
+       				</div>
+    			</div>
+	}
+})
 
 export const Header = React.createClass({
 	render: () => {
@@ -45,6 +53,36 @@ export const Header = React.createClass({
 
 })
 
+export const Hamburguesa = React.createClass({
+	render: () => {
+		return <div class="hamburguesa">
+        			<hr></hr>
+        			<hr></hr>
+        			<hr></hr>
+    			</div>
+    		}
+})
+
+export const Nav = React.createClass({
+	render: () => {
+		return  <nav>
+	        		<ul class="quickLinks">
+			            <li><a href="#search/guitars">Guitars</a></li>
+			            <li><a href="#search/music">Music</a></li>
+			            <li><a href="#search/guitar picks">Picks</a></li>
+			            <li><a href="#search/music posters">Posters</a></li>
+			            <li><a href="#search/band t's">Apparel</a></li>
+			            <li><a href="#search/music patches">Sew on's</a></li>
+			            <li><a href="#search/music stickers">Stickers</a></li>
+			            <li><a href="#search/music phone cases">Cases</a></li>
+	        		</ul>
+	        			{/* This may need to be moved.  Trying to consolidate components. */}
+	        		    <input type="checkbox" class="hamburguesa-menu-toggler"></input>
+    			</nav>
+	}
+})
+
+    
 export const AllListingsView = React.createClass({
 
 	_navToItem: function(evt){
