@@ -98,9 +98,11 @@ export const AllListingsView = React.createClass({
 	},
 
 	render: () => {
-		// console.log(props, "<<< Props")
+		console.log(this.props, "<<< Props")
 		return <div>
-				CHECK!
+				
+
+
  		  </div>
 	}
 })
