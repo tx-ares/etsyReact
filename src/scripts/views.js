@@ -103,18 +103,29 @@ export const AllListingsView = React.createClass({
 	}
 })
 
+// export const Listing = React.createClass({
+// 	render: function() {
+// 		var model = this.props.listingMod
+// 		console.log(model)
+
+// 		return  <div></div>
+// 	}
+// })
+
 export const ListingContainer = React.createClass({
 	_getJsxArray: function(modelArr) {
 		var jsxArray = []
 
-		modelArr.push.forEach(function(model){
-			jsxArray.push(<Listing listMod={model}/> )
+		console.log(modelArr,"<<< _getJxsArray callback triggered!")
+
+		modelArr.forEach(function(model){
+			jsxArray.push(<Listing listMod={model} /> )
 
 			return jsxArray
 		})
 
 	},
-	render: () => {
+	render: function() {
 
 		return  <div className="listing">
 					{this._getJsxArray(this.props.allColl.models)}
@@ -122,9 +133,7 @@ export const ListingContainer = React.createClass({
 	}
 })
 
-export const Listing = React.createClass({
-	
-})
+
 
  // className="listing" id={props.allColl[i].get('listing_id')}><img src="listingImgUrl"></img>
  // 		  	<h5>  listingTitle </h5>
