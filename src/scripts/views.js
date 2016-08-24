@@ -11,77 +11,76 @@ export const Body = React.createClass({
 						<Nav />
 						<MainImg />
 					</div>
-
 		}
 })
 
 export const Footer = React.createClass({
-	render: () => {
-		return <footer>
-					<ul className="footer quickLinks">
-            			<li><h5><a href="https://github.com/txsadamwest">Github</a></h5></li>
-            			<li><h5><a href="https://medium.com/@txsadamwest">Blog</a></h5></li>
-            			<li><h5><a href="mailto:a.huerta@gmail.com">Contact</a></h5></li>
-            			<li><h5><a href="https://github.com/txsadamwest">Portfolio</a></h5></li>
-            			<p className="finePrint">&copy; TxsAdamWest 2016 All data is pulled from Etsy's API.  Very special thanks to them for letting me rip their api to make this. :) </p>
-        			</ul>
-   				</footer>
-	}
+		render: () => {
+			return <footer>
+						<ul className="footer quickLinks">
+	            			<li><h5><a href="https://github.com/txsadamwest">Github</a></h5></li>
+	            			<li><h5><a href="https://medium.com/@txsadamwest">Blog</a></h5></li>
+	            			<li><h5><a href="mailto:a.huerta@gmail.com">Contact</a></h5></li>
+	            			<li><h5><a href="https://github.com/txsadamwest">Portfolio</a></h5></li>
+	            			<p className="finePrint">&copy; TxsAdamWest 2016 All data is pulled from Etsy's API.  Very special thanks to them for letting me rip their api to make this. :) </p>
+	        			</ul>
+	   				</footer>
+		}
 })
 
 export const MainImg = React.createClass({
-	render: () => {
-		return  <div className="mainImg">
-        				<img className="headlineImg" src="images/AsILayDyingwallpaper.jpg"></img>
-        			<div className="search">
-     					<input className="searchBar" type="text" placeholder="Search Riffsy" /><button className="searchButton">Search</button>
-       				</div>
-    			</div>
-	}
+		render: () => {
+			return  <div className="mainImg">
+	        				<img className="headlineImg" src="images/AsILayDyingwallpaper.jpg"></img>
+	        			<div className="search">
+	     					<input className="searchBar" type="text" placeholder="Search Riffsy" /><button className="searchButton">Search</button>
+	       				</div>
+	    			</div>
+		}
 })
 
 export const Header = React.createClass({
-	render: () => {
-		return <header>
-        			<h1><a href="#home">Riffsy</a></h1>
-        			<div className="iconBox">
-        				<a href="#home"><i className="fa fa-home"></i></a>
-        				<i className="fa fa-heart"></i>
-        				<i className="fa fa-user"></i>
-        				<i className="fa fa-shopping-cart" aria-hidden="true"></i>
-        			</div>
-    			</header>
-	}
+		render: () => {
+			return <header>
+	        			<h1><a href="#home">Riffsy</a></h1>
+	        			<div className="iconBox">
+	        				<a href="#home"><i className="fa fa-home"></i></a>
+	        				<i className="fa fa-heart"></i>
+	        				<i className="fa fa-user"></i>
+	        				<i className="fa fa-shopping-cart" aria-hidden="true"></i>
+	        			</div>
+	    			</header>
+		}
 
 })
 
 export const Hamburguesa = React.createClass({
-	render: () => {
-		return <div className="hamburguesa">
-        			<hr></hr>
-        			<hr></hr>
-        			<hr></hr>
-    			</div>
-    		}
+		render: () => {
+			return  <div className="hamburguesa">
+	        			<hr></hr>
+	        			<hr></hr>
+	        			<hr></hr>
+	    			</div>
+	    }
 })
 
 export const Nav = React.createClass({
-	render: () => {
-		return  <nav>
-	        		<ul className="quickLinks">
-			            <li><a href="#search/guitars">Guitars</a></li>
-			            <li><a href="#search/music">Music</a></li>
-			            <li><a href="#search/guitar picks">Picks</a></li>
-			            <li><a href="#search/music posters">Posters</a></li>
-			            <li><a href="#search/band t's">Apparel</a></li>
-			            <li><a href="#search/music patches">Sew on's</a></li>
-			            <li><a href="#search/music stickers">Stickers</a></li>
-			            <li><a href="#search/music phone cases">Cases</a></li>
-	        		</ul>
-	        			{/* This may need to be moved.  Trying to consolidate components. */}
-	        		    <input type="checkbox" className="hamburguesa-menu-toggler"></input>
-    			</nav>
-	}
+		render: () => {
+			return  <nav>
+		        		<ul className="quickLinks">
+				            <li><a href="#search/guitars">Guitars</a></li>
+				            <li><a href="#search/music">Music</a></li>
+				            <li><a href="#search/guitar picks">Picks</a></li>
+				            <li><a href="#search/music posters">Posters</a></li>
+				            <li><a href="#search/band t's">Apparel</a></li>
+				            <li><a href="#search/music patches">Sew on's</a></li>
+				            <li><a href="#search/music stickers">Stickers</a></li>
+				            <li><a href="#search/music phone cases">Cases</a></li>
+		        		</ul>
+		        			{/* This may need to be moved.  Trying to consolidate components. */}
+		        		    <input type="checkbox" className="hamburguesa-menu-toggler"></input>
+	    			</nav>
+		}
 })
 
 export const AllListingsView = React.createClass({
@@ -95,20 +94,36 @@ export const AllListingsView = React.createClass({
 
 	render: function() {
 		console.log(this.props, "<<< Props")
-		// var self = this
 
-		return <div>
-				<Body />
-				<Footer />
- 		  </div>
+		return  <div>
+					<Body />
+					<ListingContainer allColl={this.props.allColl}/>
+					<Footer />
+ 		  		</div>
+	}
+})
+
+export const ListingContainer = React.createClass({
+	_getJsxArray: function(modelArr) {
+		var jsxArray = []
+
+		modelArr.push.forEach(function(model){
+			jsxArray.push(<Listing listMod={model}/> )
+
+			return jsxArray
+		})
+
+	},
+	render: () => {
+
+		return  <div className="listing">
+					{this._getJsxArray(this.props.allColl.models)}
+				</div>
 	}
 })
 
 export const Listing = React.createClass({
-
-	render: () => {
-
-	}
+	
 })
 
  // className="listing" id={props.allColl[i].get('listing_id')}><img src="listingImgUrl"></img>
