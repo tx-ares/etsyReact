@@ -38,8 +38,9 @@ const app = function() {
 				keywords: 'rock music'
 			}
 		}).then(function() {
-			// Somethings broke.
+			//This is the first route that will trigger.  Here our collection will remain the same , and using .then we will trigger our React render. 
 			console.log(allColl, "<<< Data fetched.")
+			//Important to note, once our collection is fetched, we must then pass that data to our React component in the form of props.  
 			ReactDOM.render(<AllListingsView allColl={allColl}/>,document.querySelector('.container'))
 			console.log("render qued.")
 			})

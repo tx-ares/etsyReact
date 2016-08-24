@@ -84,41 +84,47 @@ export const Nav = React.createClass({
 })
 
 export const AllListingsView = React.createClass({
-
+	//Our first main component here will handle painting the DOM for the first time.  
 	_navToItem: function(evt){
 		var listingId = evt.currentTarget.getAttribute('id')
 		console.log(listingId, "<<<<<< listingId is ")
 
 		location.hash = 'itemListing/' + listingId
 	},
-
+	//Here we will render the DOM with including all the prior subcomponents created. 
 	render: function() {
+		//Sanity check to make sure we still have our data.
 		console.log(this.props, "<<< Props")
 
 		return  <div>
 					<Body />
+					{/* Keeping with the same principal as in our router, we must continue to pass props along to any components that require that data.	*/}
 					<ListingContainer allColl={this.props.allColl}/>
 					<Footer />
  		  		</div>
 	}
 })
 
-// export const Listing = React.createClass({
-// 	render: function() {
-// 		var model = this.props.listingMod
-// 		console.log(model)
+export const Listing = React.createClass({
+	//Getting fun now. Continue here....
+	render: function() {
+		var model = this.props.listMod
+		console.log(model, "<<< Single listing rendered!")
 
-// 		return  <div></div>
-// 	}
-// })
+		return  <div>Do do donuts</div>
+	}
+})
 
 export const ListingContainer = React.createClass({
+	//We now grabbed the models from our collection in the render function below.
 	_getJsxArray: function(modelArr) {
+		//Any good array starts out empty. 
 		var jsxArray = []
-
+		//Sanity check.  Still good? Good.
 		console.log(modelArr,"<<< _getJxsArray callback triggered!")
-
+		//Heavy lifter here.  
 		modelArr.forEach(function(model){
+			//Every index is now pushed into our Listing scaffold component.  Which will then trigger Listing component's render function.
 			jsxArray.push(<Listing listMod={model} /> )
 
 			return jsxArray
@@ -128,10 +134,13 @@ export const ListingContainer = React.createClass({
 	render: function() {
 
 		return  <div className="listing">
+					{/* We want each listing model to be placed into their individual divs. 	//If we look at this.props.allColl we will see a an array that contains our search results!  We're going to want to take each index of the array and mount them into each individual listing component.
+*/}
 					{this._getJsxArray(this.props.allColl.models)}
 				</div>
 	}
 })
+
 
 
 
