@@ -40,7 +40,7 @@ const app = function() {
 		}).then(function() {
 			// Somethings broke.
 			console.log(allColl, "<<< Data fetched.")
-			ReactDOM.render(<Body allColl={allColl}/>,document.querySelector('.container'))
+			ReactDOM.render(<AllListingsView allColl={allColl}/>,document.querySelector('.container'))
 			console.log("render qued.")
 			})
 

@@ -97,8 +97,10 @@ export const AllListingsView = React.createClass({
 		location.hash = 'itemListing/' + listingId
 	},
 
-	render: () => {
-		// console.log(this.props, "<<< Props")
+	render: function() {
+		console.log(this.props, "<<< Props")
+		// var self = this
+
 		return <div>
 				Check 1!
 				<ListingContainer allColl={this.props.allColl}/>
