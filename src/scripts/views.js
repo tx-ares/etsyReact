@@ -11,7 +11,7 @@ export const Body = React.createClass({
 						<Nav />
 						<MainImg />
 
-						<AllListingsView />
+						<AllListingsView allColl={this.props.allColl}/>
 
 						<Footer />
 					</div>
@@ -100,10 +100,17 @@ export const AllListingsView = React.createClass({
 	render: () => {
 		// console.log(this.props, "<<< Props")
 		return <div>
-				Check 1
-
+				Check 1!
+				<ListingContainer allColl={this.props.allColl}/>
 
  		  </div>
+	}
+})
+
+export const Listing = React.createClass({
+
+	render: () => {
+
 	}
 })
 
