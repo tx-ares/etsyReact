@@ -37,11 +37,13 @@ const app = function() {
 				api_key: allColl._key,
 				keywords: 'rock music'
 			}
-		}) 
+		}).then(function() {
 			// Somethings broke.
 			console.log(allColl, "<<< Data fetched.")
 			ReactDOM.render(<Body allColl={allColl}/>,document.querySelector('.container'))
 			console.log("render qued.")
+			})
+
 	},
 
 	showItemListing: function(listingId) {
