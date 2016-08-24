@@ -10,10 +10,6 @@ export const Body = React.createClass({
 						<Hamburguesa />
 						<Nav />
 						<MainImg />
-
-						<AllListingsView allColl={this.props.allColl}/>
-
-						<Footer />
 					</div>
 
 		}
@@ -102,9 +98,8 @@ export const AllListingsView = React.createClass({
 		// var self = this
 
 		return <div>
-				Check 1!
-				<ListingContainer allColl={this.props.allColl}/>
-
+				<Body />
+				<Footer />
  		  </div>
 	}
 })
