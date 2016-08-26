@@ -98,7 +98,7 @@ export const AllListingsView = React.createClass({
 
 		return  <div>
 					<Body />
-					{/* Keeping with the same principal as in our router, we must continue to pass props along to any components that require that data.	*/}
+					{/* Keeping with the same principle as in our router, we must continue to pass props along to any components that require that data.	*/}
 					<ListingContainer allColl={this.props.allColl}/>
 					<Footer />
  		  		</div>
@@ -110,6 +110,10 @@ export const Listing = React.createClass({
 	render: function() {
 		var model = this.props.listMod
 		console.log(model, "<<< Single listing rendered!")
+
+		var title = model.get('title')
+
+		console.log(title)
 
 		return  <div>Do do donuts</div>
 	}
