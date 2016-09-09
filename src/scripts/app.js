@@ -6,7 +6,7 @@ import {ListingModel} from './models.js'
 
 import {Body} from './views.js'
 import {AllListingsView} from './views.js'
-import Views from './views.js'
+import {SingleListingView} from './views.js'
 
 
 const app = function() {
@@ -59,8 +59,10 @@ const app = function() {
 				listing_id: listingId
 			}
 
-		}).then(function(jsonResp){
+		}).then(function(){
+			console.log(listingMod, "ROUTER: listingMod data fetched.")
 			ReactDOM.render(<SingleListingView listingMod={listingMod} />,document.querySelector('.container'))
+			console.log("ROUTER: SingleListingView render qued!")
 		})
 	},
 

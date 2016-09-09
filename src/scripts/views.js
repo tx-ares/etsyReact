@@ -85,21 +85,14 @@ export const Nav = React.createClass({
 
 export const AllListingsView = React.createClass({
 
-	// _searchEnter: function(eventObj){
-	// if(eventObj.keyCode === 13) {
-	// 	console.log(eventObj.target.value)
-	// 	location.hash = "search/" + eventObj.target.value
-	// 	eventObj.target.value = ''
-	// 	}
+	//Our first main component here will handle painting the DOM for the first time.  
+	// _navToItem: function(evt){
+	// 	var listingId = evt.currentTarget.getAttribute('id')
+	// 	console.log(listingId, "<<<<<< listingId is ")
+
+	// 	location.hash = 'itemListing/' + listingId
 	// },
 
-	//Our first main component here will handle painting the DOM for the first time.  
-	_navToItem: function(evt){
-		var listingId = evt.currentTarget.getAttribute('id')
-		console.log(listingId, "<<<<<< listingId is ")
-
-		location.hash = 'itemListing/' + listingId
-	},
 	//Here we will render the DOM with including all the prior subcomponents created. 
 	render: function() {
 		//Sanity check to make sure we still have our data.
@@ -126,15 +119,14 @@ export const AllListingsView = React.createClass({
 export const SingleListingView = React.createClass({
 	render: function() {
 		return (
-			<div className="listing singleListing">
-				<Listing listMod={this.props.listingMod}/>
+			<div>
+				<h5> A lonely listing... </h5>
 			</div>
 		)
 	}
 })
 
 export const Listing = React.createClass({
-	//Getting fun now. Continue here....
 
 	render: function() {
 		var model = this.props.listMod
