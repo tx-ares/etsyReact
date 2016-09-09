@@ -111,11 +111,12 @@ export const Listing = React.createClass({
 		var model = this.props.listMod
 		console.log(model, "<<< Single listing rendered!")
 
-		var title = model.get('title')
-
-		console.log(title)
-
-		return ( <div>Do do donuts</div> )
+		return ( <div className="listing" id={model.get('listing_id')}><img src={model.get('Images')[0].url_570xN}></img>
+					<h5>{model.get('title')}</h5>
+					<p className="style">{model.get('tags')[0]}{model.get('tags')[1]}</p>
+					<button className="plus">+</button><p className="price">${model.get('price')}</p>
+				</div>
+		)
 	}
 })
 
@@ -132,14 +133,14 @@ export const ListingContainer = React.createClass({
 			jsxArray.push(<Listing listMod={model} /> )
 
 		})
-
+		//After each model is pushed into the array, return the array.
 		return jsxArray
 
 
 	},
 	render: function() {
 
-		return  <div className="listing" >
+		return  <div id="container" >
 					{/* We want each listing model to be placed into their individual divs. 	//If we look at this.props.allColl we will see a an array that contains our search results!  We're going to want to take each index of the array and mount them into each individual listing component.
 */}
 					{this._getJsxArray(this.props.allColl.models)}
