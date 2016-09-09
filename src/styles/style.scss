@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'If';
-    src: url('./fonts/If.ttf') format('truetype');
+    src: url('../fonts/If.ttf') format('truetype');
     /* Safari, Android, iOS */
 }
 
@@ -164,7 +164,7 @@ input.hamburguesa-menu-toggler:checked + nav {
 /* Main Image Styles */
 
 .mainImg {
-    background-image: url('images/AsILayDyingwallpaper.jpg');
+    background-image: url('../../images/AsILayDyingwallpaper.jpg');
 }
 
 .headlineImg {

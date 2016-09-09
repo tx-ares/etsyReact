@@ -31,7 +31,7 @@ export const Footer = React.createClass({
 export const MainImg = React.createClass({
 		render: () => {
 			return  <div className="mainImg">
-	        				<img className="headlineImg" src="images/AsILayDyingwallpaper.jpg"></img>
+	        				<img className="headlineImg" src="../images/AsILayDyingwallpaper.jpg"></img>
 	        			<div className="search">
 	     					<input className="searchBar" type="text" placeholder="Search Riffsy" /><button className="searchButton">Search</button>
 	       				</div>
