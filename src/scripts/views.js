@@ -53,14 +53,14 @@ export const SingleListingView = React.createClass({
 		return (
 				<div>
 					<Body />
-						<div className='listing singleListing'>
+						<div className='singleListing'>
 							<div className="imgContainer">
 								<img src={singleListing.get('Images')[0].url_570xN} />
 							</div>
 							<div className="details">
-							<h5>{singleListing.get('title')}</h5>
-							<p className="style">{singleListing.get('tags')[0]} , {singleListing.get('tags')[1]}<button className="etsyButton"><a href={singleListing.get('url')}>Buy it on Etsy.com for ${singleListing.get('price')}</a></button>
-</p>
+							<h3>{singleListing.get('title')}</h3>
+							<p className="style">{singleListing.get('tags')[0]},{singleListing.get('tags')[1]}</p>
+							<p><button className="etsyButton"><a href={singleListing.get('url')}>Buy it on Etsy.com for ${singleListing.get('price')}</a></button></p>
 							{this._getParse(singleListing.get('description'))}
 							</div>
 
