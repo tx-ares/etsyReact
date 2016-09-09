@@ -1,11 +1,14 @@
+//Dependencies
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
+
+//Collections
 import {AllListingsCollection} from './models.js'
 import {ListingModel} from './models.js'
-import {Body} from './views.js'
 
 //Main Views
+import {Body} from './views.js'
 import {AllListingsView} from './views.js'
 import {SingleListingView} from './views.js'
 import {SearchView} from './views.js'
@@ -50,7 +53,6 @@ const app = function() {
 	},
 
 	showItemListing: function(listingId) {
-		console.log(listingId, "<<<<< ROUTER: listingId is ")
 		console.log("ROUTER: Single item route fired!")
 		var listingMod = new ListingModel(listingId)
 		listingMod.fetch({
@@ -86,19 +88,13 @@ const app = function() {
 	},
 
 	initialize: function() {
-		// console.log("ROUTER: Initialize fired!")
 		Backbone.history.start()
 	}
 
 })
 
-
-
 	var rtr = new Router()
 }
-
-// document.querySelector(".searchBar").addEventListener('keydown', searchEnter)
-
 
 
 app()

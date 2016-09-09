@@ -91,6 +91,15 @@ button {
 	color: white;
 }
 
+.etsyButton {
+    float: right;
+    background: #83c7b7;
+    color: white;
+    font-size: 16px;
+
+}
+
+
 input {
     font-size: 14px;
     padding: 2px;
@@ -219,7 +228,7 @@ input.hamburguesa-menu-toggler:checked + nav {
 
 .listing .price{
 	float: right;
-	color: #52b29b;
+	color: white;
 }
 
 .listing .description{
@@ -247,6 +256,9 @@ footer li h5{
 
 @media only screen and (min-width: 670px) {
     .hamburguesa {
+        display: none;
+    }
+    .hamburguesa-menu-toggler {
         display: none;
     }
     .iconBox {
@@ -315,8 +327,5 @@ footer li h5{
     .finePrint {
     	font-size: 12px;
     }
-    /* imgContainer{
-    	border: 8px solid #83c7b7;
-    	border-radius: 5px 5px 5px 5px;
-    } */
+  
 }

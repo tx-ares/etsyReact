@@ -33,6 +33,19 @@ export const SearchView = React.createClass({
 })
 
 export const SingleListingView = React.createClass({
+	_getParse: function(descr) {
+		var ps = [],
+			line = ''
+		for (var i = 0; i < descr.length; i ++) {
+			line += descr[i]
+			if (descr[i] === '\n') {
+				ps.push(<p className="description">{line}</p>)
+				line = ''
+			}
+		}
+		return ps
+	},
+
 	render: function() {
 
 		var singleListing = this.props.listingMod
@@ -42,8 +55,10 @@ export const SingleListingView = React.createClass({
 					<Body />
 						<div className='listing singleListing'><img src={singleListing.get('Images')[0].url_570xN} />
 							<h5>{singleListing.get('title')}</h5>
-							<p className="style">{singleListing.get('tags')[0]} , {singleListing.get('tags')[1]}<span className="price">${singleListing.get('price')}</span></p>
-							<p className="description">{singleListing.get('description')}</p>
+							<p className="style">{singleListing.get('tags')[0]} , {singleListing.get('tags')[1]}<button className="etsyButton"><a className="price" href={singleListing.get('url')}>Buy it on Etsy.com for ${singleListing.get('price')}</a></button>
+</p>
+							{this._getParse(singleListing.get('description'))}
+
 						</div>
 					<Footer />
 				</div>
@@ -64,8 +79,9 @@ export const Body = React.createClass({
 })
 
 export const Footer = React.createClass({
-		render: () => {
-			return <footer>
+		render: function() {
+			return (
+					<footer>
 						<ul className="footer quickLinks">
 	            			<li><h5><a href="https://github.com/txsadamwest">Github</a></h5></li>
 	            			<li><h5><a href="https://medium.com/@txsadamwest">Blog</a></h5></li>
@@ -74,6 +90,7 @@ export const Footer = React.createClass({
 	            			<p className="finePrint">&copy; TxsAdamWest 2016 All data is pulled from Etsy's API.  Very special thanks to them for letting me rip their api to make this. :) </p>
 	        			</ul>
 	   				</footer>
+	   		)
 		}
 })
 
@@ -122,18 +139,21 @@ export const Header = React.createClass({
 })
 
 export const Hamburguesa = React.createClass({
-		render: () => {
-			return  <div className="hamburguesa">
+		render: function() {
+			return  (
+				<div className="hamburguesa">
 	        			<hr></hr>
 	        			<hr></hr>
 	        			<hr></hr>
-	    			</div>
+	    		</div>
+	    	)
 	    }
 })
 
 export const Nav = React.createClass({
-		render: () => {
-			return  <nav>
+		render: function() {
+			return  (
+					<nav>
 		        		<ul className="quickLinks">
 				            <li><a href="#search/guitars">Guitars</a></li>
 				            <li><a href="#search/music">Music</a></li>
@@ -145,6 +165,7 @@ export const Nav = React.createClass({
 				            <li><a href="#search/music phone cases">Cases</a></li>
 		        		</ul>
 	    			</nav>
+	    	)
 		}
 })
 
@@ -189,9 +210,11 @@ export const ListingContainer = React.createClass({
 	},
 	render: function() {
 
-		return  <div id="container" >
-					{this._getJsxArray(this.props.allColl.models)}
-				</div>
+		return  (
+			<div id="container" >
+				{this._getJsxArray(this.props.allColl.models)}
+			</div>
+		)
 	}
 })
 
