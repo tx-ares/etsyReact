@@ -2,14 +2,62 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Models from './models.js'
 
+export const AllListingsView = React.createClass({
+
+	//Here we will render the DOM with including all the prior subcomponents created. 
+	render: function() {
+		//Sanity check to make sure we still have our data.
+		console.log(this.props, "<<< Props")
+
+		return  <div>
+					<Body />
+					{/* Keeping with the same principle as in our router, we must continue to pass props along to any components that require that data.	*/}
+					<ListingContainer allColl={this.props.allColl}/>
+					<Footer />
+ 		  		</div>
+	}
+})
+
+export const SearchView = React.createClass({
+
+	render: function() {
+		return (
+				<div>
+					<Body />
+					{/*  This time, when we call ListingContainer component we will pass searchColl as our collection.	*/}
+					<ListingContainer allColl={this.props.searchColl}/>
+					<Footer />
+ 		  		</div>		
+ 		  	)
+	}
+})
+
+export const SingleListingView = React.createClass({
+	render: function() {
+
+		var singleListing = this.props.listingMod
+
+		return (
+				<div>
+					<Body />
+						<div className='listing singleListing'><img src={singleListing.get('Images')[0].url_570xN} />
+							<h5>{singleListing.get('title')}</h5>
+							<p className="style">{singleListing.get('tags')[0]} , {singleListing.get('tags')[1]}<span className="price">${singleListing.get('price')}</span></p>
+							<p className="description">{singleListing.get('description')}</p>
+						</div>
+					<Footer />
+				</div>
+		)
+	}
+})
+
 export const Body = React.createClass({
 		render: () => {
 			return <div>
-						{console.log("render fired!")}
 						<Header />
 						<Hamburguesa />
+						<input type="checkbox" className="hamburguesa-menu-toggler"></input>
 						<Nav />
-						<MainImg />
 						<SearchBar />
 					</div>
 		}
@@ -43,7 +91,7 @@ export const SearchBar = React.createClass({
 
 	_searchEnter : function(eventObj){
 	if(eventObj.keyCode === 13) {
-		console.log(eventObj.target.value)
+		// console.log(eventObj.target.value)
 		location.hash = "search/" + eventObj.target.value
 		eventObj.target.value = ''
 		}
@@ -96,70 +144,11 @@ export const Nav = React.createClass({
 				            <li><a href="#search/music stickers">Stickers</a></li>
 				            <li><a href="#search/music phone cases">Cases</a></li>
 		        		</ul>
-		        			{/* This may need to be moved.  Trying to consolidate components. */}
-		        		    <input type="checkbox" className="hamburguesa-menu-toggler"></input>
 	    			</nav>
 		}
 })
 
-export const AllListingsView = React.createClass({
 
-	//Our first main component here will handle painting the DOM for the first time.  
-	// _navToItem: function(evt){
-	// 	var listingId = evt.currentTarget.getAttribute('id')
-	// 	console.log(listingId, "<<<<<< listingId is ")
-
-	// 	location.hash = 'itemListing/' + listingId
-	// },
-
-	//Here we will render the DOM with including all the prior subcomponents created. 
-	render: function() {
-		//Sanity check to make sure we still have our data.
-		console.log(this.props, "<<< Props")
-
-		return  <div>
-					<Body />
-					{/* Keeping with the same principle as in our router, we must continue to pass props along to any components that require that data.	*/}
-					<ListingContainer allColl={this.props.allColl}/>
-					<Footer />
- 		  		</div>
-	}
-})
-
-export const SearchView = React.createClass({
-
-	render: function() {
-		return (
-				<div>
-					<Body />
-					{/*  This time, when we call ListingContainer component we will pass searchColl as our collection.	*/}
-					<ListingContainer allColl={this.props.searchColl}/>
-					<Footer />
- 		  		</div>		
- 		  	)
-	}
-})
-
-export const SingleListingView = React.createClass({
-	render: function() {
-
-		console.log(this.props.listingMod, "<<< Still got data?")
-
-		var singleListing = this.props.listingMod
-
-		return (
-				<div>
-					<Body />
-						<div className='listing singleListing'><img src={singleListing.get('Images')[0].url_570xN} />
-							<h5>{singleListing.get('title')}</h5>
-							<p className="style">{singleListing.get('tags')[0]} , {singleListing.get('tags')[1]}<span className="price">${singleListing.get('price')}</span></p>
-							<p className="description">{singleListing.get('description')}</p>
-						</div>
-					<Footer />
-				</div>
-		)
-	}
-})
 
 export const Listing = React.createClass({
 
@@ -201,117 +190,8 @@ export const ListingContainer = React.createClass({
 	render: function() {
 
 		return  <div id="container" >
-					{/* We want each listing model to be placed into their individual divs. 	//If we look at this.props.allColl we will see a an array that contains our search results!  We're going to want to take each index of the array and mount them into each individual listing component.
-*/}
 					{this._getJsxArray(this.props.allColl.models)}
 				</div>
 	}
 })
 
-
-
-
- // className="listing" id={props.allColl[i].get('listing_id')}><img src="listingImgUrl"></img>
- // 		  	<h5>  listingTitle </h5>
- // 		  	<p className="style">{props.allColl[i].get('tags')[0]}{props.allColl[i].get('tags')[1]}</p>
- // 		  	<button className="plus"></button><p className="price"> {props.allColl[i].get('price')}</p>
-
-// ******************************************* //  
-
-// Former Backbone Views here for reference. ////
-
-// ******************************************* //  
-
-// var AllListingsView = Backbone.View.extend({
-
-// 	el: "#container",
-
-// 	events: {
-// 		'click .listing': '_navToItem'  
-// 	},
-
-// 	_navToItem: function(evt){
-
-// 		var listingId = evt.currentTarget.getAttribute('id')
-// 		console.log(listingId, "<<<<<< listingId is ")
-
-// 		location.hash = 'itemListing/' + listingId
-// 	},
-
-// 	_buildTemplate: function(modelArr){
-
-// 		var listingsArr = modelArr
-
-// 		htmlString = ''
-
-// 		for(var i = 0; i < listingsArr.length; i++){
-
-// 		var listingImgUrl = listingsArr[i].get('Images')[0].url_570xN
-// 		var listingTitle = listingsArr[i].get('title')
-
-
-// 		// Take note of using .get here, refer to my evernote.
-// 		// <img src={this.props.ListingModel.get('Images')[0].url_170x135} />
-//         // <h5>{this.props.ListingModel.get('title')}</h5>
-
-// 		htmlString += '<div class="listing" id=' + listingsArr[i].get('listing_id') + '><img src="' + listingImgUrl + '">'
-// 		htmlString += '<h5>' + listingTitle + '</h5>'
-// 		htmlString += '<p class="style">' + listingsArr[i].get('tags')[0] + ', ' + listingsArr[i].get('tags')[1] + '</p>'
-// 		htmlString += '<button class="plus">+</button><p class="price">$' + listingsArr[i].get('price') + '</p>'
-// 		htmlString += '</div>'
-
-
-// 		console.log("Build template fired!")
-// 		console.log(modelArr)
-// 		}
-
-// 		return htmlString
-// 	},
-
-// 	render: function(){
-// 		console.log("Render fired!")
-// 		this.el.innerHTML = this._buildTemplate(this.ac.models)
-// 	},
-
-// 	initialize: function(allColl){
-// 		console.log("AllListingsView initialize fired!")
-// 		this.ac = allColl
-// 		this.render()
-// 	}
-
-// })
-
-// var SingleView = Backbone.View.extend({
-
-// 	el: "#container",
-
-
-// 	_buildTemplate: function(listingMod){
-
-// 		var singleListing = listingMod
-
-// 		htmlString = ''
-
-// 		htmlString += "<div class='listing singleListing'><img src=" + singleListing.get('Images')[0].url_570xN + ">"
-// 		htmlString += "<h5>" + singleListing.get('title') + "</h5>"
-// 		htmlString += '<p class="style">' + singleListing.get('tags')[0] + ', ' + singleListing.get('tags')[1] + ' <span class="price">$' + singleListing.get('price') +'</span></p>'
-// 		htmlString += '<p class="description">' + singleListing.get('description') + '</p>'
-// 		htmlString += "</div>"
-
-// 		return htmlString
-// 	},
-
-// 	render: function(err){
-// 		if (err){
-// 			console.log("No search results found, please try again.")
-// 		}
-// 		console.log("Single Render fired!")
-// 		this.el.innerHTML = this._buildTemplate(this.listMod)
-// 	},
-
-// 	initialize: function(listingMod){
-// 		this.listMod = listingMod
-// 		this.render()
-// 	}
-
-// })

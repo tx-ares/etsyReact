@@ -1,5 +1,12 @@
 /* Mobile First Styles */
 
+@media only screen and (max-width: 445px) {
+    .container {
+        overflow: auto;
+        background-color: lime;
+    }
+}
+
 
 /* Media Query Below for Tablet and Desktop */
 
@@ -8,7 +15,7 @@
 
 @font-face {
     font-family: 'If';
-    src: url('../fonts/If.ttf') format('truetype');
+    src: url('./fonts/If.ttf') format('truetype');
     /* Safari, Android, iOS */
 }
 
@@ -175,7 +182,7 @@ input.hamburguesa-menu-toggler:checked + nav {
     text-align: center;
     height: 40px;
     padding: 6px;
-    background-color: rgba(20, 20, 20, .8);
+    background-color: rgba(0, 0, 0, .0);
 }
 
 
