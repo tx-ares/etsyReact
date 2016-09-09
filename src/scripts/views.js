@@ -10,6 +10,7 @@ export const Body = React.createClass({
 						<Hamburguesa />
 						<Nav />
 						<MainImg />
+						<SearchBar />
 					</div>
 		}
 })
@@ -29,14 +30,32 @@ export const Footer = React.createClass({
 })
 
 export const MainImg = React.createClass({
-		render: () => {
-			return  <div className="mainImg">
-	        				<img className="headlineImg" src="../images/AsILayDyingwallpaper.jpg"></img>
-	        			<div className="search">
-	     					<input className="searchBar" type="text" placeholder="Search Riffsy" /><button className="searchButton">Search</button>
-	       				</div>
-	    			</div>
+		render: function() {
+			return  (
+				<div className="mainImg">
+	        		<img className="headlineImg" src="../images/AsILayDyingwallpaper.jpg"></img>
+	    		</div>
+	    	)
 		}
+})
+
+export const SearchBar = React.createClass({
+
+	_searchEnter : function(eventObj){
+	if(eventObj.keyCode === 13) {
+		console.log(eventObj.target.value)
+		location.hash = "search/" + eventObj.target.value
+		eventObj.target.value = ''
+		}
+	},
+
+	render: function() {
+		return (
+			<div className="search">
+	     		<input onKeyDown={this._searchEnter} className="searchBar" type="text" placeholder="Search Riffsy" /><button className="searchButton">Search</button>
+	       	</div>
+			)
+	}
 })
 
 export const Header = React.createClass({
@@ -107,14 +126,14 @@ export const AllListingsView = React.createClass({
 	}
 })
 
-// export const SearchView = React.createClass({
+export const SearchView = React.createClass({
 
-// 	render: function() {
-// 		return (
-
-// 		)
-// 	}
-// })
+	render: function() {
+		return (
+			<h5> Some dang ol' search results </h5>
+		)
+	}
+})
 
 export const SingleListingView = React.createClass({
 	render: function() {

@@ -62,7 +62,7 @@ const app = function() {
 			}
 
 		}).then(function(){
-			console.log(listingMod, "ROUTER: listingMod data fetched.")
+			console.log(listingMod, "<<<< ROUTER: listingMod data fetched.")
 			ReactDOM.render(<SingleListingView listingMod={listingMod} />,document.querySelector('.container'))
 			console.log("ROUTER: SingleListingView render qued!")
 		})
@@ -78,7 +78,9 @@ const app = function() {
 				keywords: keywords
 			}
 		}).then(function() {
+			console.log(searchColl, "<<<< ROUTER: searchColl data fetched.")
 			ReactDOM.render(<SearchView searchColl={searchColl}/>, document.querySelector('.container'))
+			console.log("ROUTER: SearchView render qued!")
 		})
 
 	},
@@ -90,13 +92,6 @@ const app = function() {
 
 })
 
-var searchEnter = function(eventObj){
-	if(eventObj.keyCode === 13) {
-		console.log(eventObj.target.value)
-		location.hash = "search/" + eventObj.target.value
-		eventObj.target.value = ''
-		}
-	}
 
 	var rtr = new Router()
 }
