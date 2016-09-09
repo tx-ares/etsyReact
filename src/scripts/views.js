@@ -7,7 +7,7 @@ export const AllListingsView = React.createClass({
 	//Here we will render the DOM with including all the prior subcomponents created. 
 	render: function() {
 		//Sanity check to make sure we still have our data.
-		console.log(this.props, "<<< Props")
+		// console.log(this.props, "<<< Props")
 
 		return  <div>
 					<Body />
@@ -180,7 +180,7 @@ export const Listing = React.createClass({
 
 	render: function() {
 		var model = this.props.listMod
-		console.log(model, "<<< Single listing rendered!")
+		// console.log(model, "<<< Single listing rendered!")
 
 		return ( <div className="listing" id={model.get('listing_id')}>
 
@@ -204,6 +204,7 @@ export const ListingContainer = React.createClass({
 		console.log(modelArr,"<<< _getJxsArray callback triggered!")
 		//Heavy lifter here.  
 		modelArr.forEach(function(model){
+			console.log(model)
 			//Every index is now pushed into our Listing scaffold component.  Which will then trigger Listing component's render function.
 			jsxArray.push(<Listing listMod={model} /> )
 
@@ -216,7 +217,7 @@ export const ListingContainer = React.createClass({
 	render: function() {
 
 		return  (
-			<div id="container" >
+			<div id="listingContainer">
 				{this._getJsxArray(this.props.allColl.models)}
 			</div>
 		)

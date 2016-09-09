@@ -36,7 +36,7 @@ img {
     overflow: hidden;
 }
 
-#container {
+#listingContainer {
     margin: 0 auto;
     width: 80%;
     height: 80%;
@@ -69,13 +69,12 @@ a:hover {
 /* Header Styles */
 
 header {
-    font-family: 'Helvetica';
+    font-family: "fonts/if/IF/If.ttf";
     background: black;
     border-bottom: 4px solid #83c7b7;
 }
 
 h1 {
-    font-family: "fonts/If.ttf";
     display: inline-block;
     text-align: center;
     font-size: 1.5em;
