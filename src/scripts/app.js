@@ -42,7 +42,7 @@ const app = function() {
 			console.log(allColl, "<<< Data fetched.")
 			//Important to note, once our collection is fetched, we must then pass that data to our React component in the form of props.  
 			ReactDOM.render(<AllListingsView allColl={allColl}/>,document.querySelector('.container'))
-			console.log("render qued.")
+			console.log("ROUTER : AllListingsView render qued.")
 			})
 
 	},
@@ -61,7 +61,6 @@ const app = function() {
 
 		}).then(function(jsonResp){
 			var singleView = new SingleView(listingMod)
-			// this.render()
 		})
 	},
 

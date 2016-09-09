@@ -115,7 +115,7 @@ export const Listing = React.createClass({
 
 		console.log(title)
 
-		return  <div>Do do donuts</div>
+		return ( <div>Do do donuts</div> )
 	}
 })
 
@@ -137,7 +137,7 @@ export const ListingContainer = React.createClass({
 	},
 	render: function() {
 
-		return  <div className="listing">
+		return  <div className="listing" >
 					{/* We want each listing model to be placed into their individual divs. 	//If we look at this.props.allColl we will see a an array that contains our search results!  We're going to want to take each index of the array and mount them into each individual listing component.
 */}
 					{this._getJsxArray(this.props.allColl.models)}
