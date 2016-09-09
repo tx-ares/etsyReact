@@ -283,9 +283,10 @@ footer li h5{
     	border-radius: 5px 5px 5px 5px;
     }
     .singleListing {
-    	width: 100%;
+        // Come back to this, re order detail/single listing.
+    	width: 80%;
     	height: 1000px;
-    	margin: 40px 0;
+    	margin: 40px auto;
     	overflow: scroll;
     }
     .listing p {

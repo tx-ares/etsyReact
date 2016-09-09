@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import {AllListingsCollection} from './models.js'
 import {ListingModel} from './models.js'
-
 import {Body} from './views.js'
+
+//Main Views
 import {AllListingsView} from './views.js'
 import {SingleListingView} from './views.js'
+import {SearchView} from './views.js'
 
 
 const app = function() {

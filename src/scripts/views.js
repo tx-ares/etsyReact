@@ -118,10 +118,21 @@ export const AllListingsView = React.createClass({
 
 export const SingleListingView = React.createClass({
 	render: function() {
+
+		console.log(this.props.listingMod, "<<< Still got data?")
+
+		var singleListing = this.props.listingMod
+
 		return (
-			<div>
-				<h5> A lonely listing... </h5>
-			</div>
+				<div>
+					<Body />
+						<div className='listing singleListing'><img src={singleListing.get('Images')[0].url_570xN} />
+							<h5>{singleListing.get('title')}</h5>
+							<p className="style">{singleListing.get('tags')[0]} , {singleListing.get('tags')[1]}<span className="price">${singleListing.get('price')}</span></p>
+							<p className="description">{singleListing.get('description')}</p>
+						</div>
+					<Footer />
+				</div>
 		)
 	}
 })
