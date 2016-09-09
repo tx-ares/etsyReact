@@ -84,6 +84,15 @@ export const Nav = React.createClass({
 })
 
 export const AllListingsView = React.createClass({
+
+	// _searchEnter: function(eventObj){
+	// if(eventObj.keyCode === 13) {
+	// 	console.log(eventObj.target.value)
+	// 	location.hash = "search/" + eventObj.target.value
+	// 	eventObj.target.value = ''
+	// 	}
+	// },
+
 	//Our first main component here will handle painting the DOM for the first time.  
 	_navToItem: function(evt){
 		var listingId = evt.currentTarget.getAttribute('id')
@@ -105,13 +114,37 @@ export const AllListingsView = React.createClass({
 	}
 })
 
+// export const SearchView = React.createClass({
+
+// 	render: function() {
+// 		return (
+
+// 		)
+// 	}
+// })
+
+export const SingleListingView = React.createClass({
+	render: function() {
+		return (
+			<div className="listing singleListing">
+				<Listing listMod={this.props.listingMod}/>
+			</div>
+		)
+	}
+})
+
 export const Listing = React.createClass({
 	//Getting fun now. Continue here....
+
 	render: function() {
 		var model = this.props.listMod
 		console.log(model, "<<< Single listing rendered!")
 
-		return ( <div className="listing" id={model.get('listing_id')}><img src={model.get('Images')[0].url_570xN}></img>
+		return ( <div className="listing" id={model.get('listing_id')}>
+
+					<a href={"#itemListing/" + model.get('listing_id')}>
+						<img src={model.get('Images')[0].url_570xN} /> 
+					</a>
 					<h5>{model.get('title')}</h5>
 					<p className="style">{model.get('tags')[0]}{model.get('tags')[1]}</p>
 					<button className="plus">+</button><p className="price">${model.get('price')}</p>

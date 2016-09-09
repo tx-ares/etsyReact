@@ -25,7 +25,7 @@ const app = function() {
 	},
 
 	showAllListings: function() {
-		console.log("Routed to showAllListings")
+		console.log("ROUTER: Routed to showAllListings")
 		var allColl = new AllListingsCollection()
 		console.log(allColl)
 		
@@ -39,7 +39,7 @@ const app = function() {
 			}
 		}).then(function() {
 			//This is the first route that will trigger.  Here our collection will remain the same , and using .then we will trigger our React render. 
-			console.log(allColl, "<<< Data fetched.")
+			console.log(allColl, "<<< ROUTER: Data fetched.")
 			//Important to note, once our collection is fetched, we must then pass that data to our React component in the form of props.  
 			ReactDOM.render(<AllListingsView allColl={allColl}/>,document.querySelector('.container'))
 			console.log("ROUTER : AllListingsView render qued.")
@@ -48,8 +48,8 @@ const app = function() {
 	},
 
 	showItemListing: function(listingId) {
-		console.log(listingId, "<<<<< listingId is ")
-		console.log("Single item route fired!")
+		console.log(listingId, "<<<<< ROUTER: listingId is ")
+		console.log("ROUTER: Single item route fired!")
 		var listingMod = new ListingModel(listingId)
 		listingMod.fetch({
 			dataType: 'jsonP',
@@ -60,7 +60,7 @@ const app = function() {
 			}
 
 		}).then(function(jsonResp){
-			var singleView = new SingleView(listingMod)
+			ReactDOM.render(<SingleListingView listingMod={listingMod} />,document.querySelector('.container'))
 		})
 	},
 
@@ -74,14 +74,13 @@ const app = function() {
 				keywords: keywords
 			}
 		}).then(function() {
-			var allView = new AllListingsView(searchColl)
-
+			ReactDOM.render(<SearchView searchColl={searchColl}/>, document.querySelector('.container'))
 		})
 
 	},
 
 	initialize: function() {
-		console.log("Initialize fired!")
+		// console.log("ROUTER: Initialize fired!")
 		Backbone.history.start()
 	}
 
