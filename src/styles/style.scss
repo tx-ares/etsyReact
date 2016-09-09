@@ -96,8 +96,12 @@ button {
     background: #83c7b7;
     color: white;
     font-size: 16px;
-
+    a:hover {
+        color: white;
+    }
 }
+
+
 
 
 input {
@@ -228,7 +232,7 @@ input.hamburguesa-menu-toggler:checked + nav {
 
 .listing .price{
 	float: right;
-	color: white;
+	color: #83c7b7;
 }
 
 .listing .description{
@@ -245,6 +249,19 @@ footer li h5{
     margin: 20px auto;
     }
 
+.imgContainer {
+    display: inline-block;
+    // border: 2px solid lime;
+    width: 50%;
+    margin-right: 10px;
+}
+
+.details {
+    display: inline-block;
+    width:48%;
+    vertical-align: top;
+    text-align: left;
+}
 
 /***************************/
 
@@ -255,6 +272,7 @@ footer li h5{
 /***************************/
 
 @media only screen and (min-width: 670px) {
+
     .hamburguesa {
         display: none;
     }
@@ -290,10 +308,10 @@ footer li h5{
     }
     .listing {
         display: inline-block;
-        width: 20%;
+        width: 32%;
         background: white;
         color: slategray;
-        margin: 20px 2%;
+        margin: 20px .5%;
         overflow: hidden;
         vertical-align: top;
         padding: 20px 4%;
@@ -304,9 +322,10 @@ footer li h5{
     .singleListing {
         // Come back to this, re order detail/single listing.
     	width: 80%;
-    	height: 1000px;
+    	// height: 1000px;
     	margin: 40px auto;
     	overflow: scroll;
+        // border: 2px solid violet;
     }
     .listing p {
         text-align: center;
