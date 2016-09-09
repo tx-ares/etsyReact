@@ -33,7 +33,7 @@ export const MainImg = React.createClass({
 		render: function() {
 			return  (
 				<div className="mainImg">
-	        		<img className="headlineImg" src="../images/AsILayDyingwallpaper.jpg"></img>
+	        		<img className="headlineImg" src="./images/AsILayDyingwallpaper.jpg"></img>
 	    		</div>
 	    	)
 		}
@@ -130,8 +130,13 @@ export const SearchView = React.createClass({
 
 	render: function() {
 		return (
-			<h5> Some dang ol' search results </h5>
-		)
+				<div>
+					<Body />
+					{/*  This time, when we call ListingContainer component we will pass searchColl as our collection.	*/}
+					<ListingContainer allColl={this.props.searchColl}/>
+					<Footer />
+ 		  		</div>		
+ 		  	)
 	}
 })
 
