@@ -131,8 +131,10 @@ export const ListingContainer = React.createClass({
 			//Every index is now pushed into our Listing scaffold component.  Which will then trigger Listing component's render function.
 			jsxArray.push(<Listing listMod={model} /> )
 
-			return jsxArray
 		})
+
+		return jsxArray
+
 
 	},
 	render: function() {
