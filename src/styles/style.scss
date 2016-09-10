@@ -3,7 +3,7 @@
 @media only screen and (max-width: 445px) {
     .container {
         overflow: auto;
-        background-color: lime;
+        width: fixed;
     }
 }
 
@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: 'If';
-    src: url('fonts/If.ttf') format('truetype');
+    src: url('./fonts/If.ttf') format('truetype');
     /* Safari, Android, iOS */
 }
 
@@ -69,7 +69,7 @@ a:hover {
 /* Header Styles */
 
 header {
-    font-family: "fonts/if/IF/If.ttf";
+    font-family: 'If';
     background: black;
     border-bottom: 4px solid #83c7b7;
 }
