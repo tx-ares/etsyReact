@@ -10,7 +10,7 @@ import Backbone from 'backbone'
 
 //Step 4 - Render Home View.
 
-console.log("Hello wurld!")
+// console.log("Hello world!")
 
 
 export const AllListingsCollection = Backbone.Collection.extend({

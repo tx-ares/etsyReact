@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Models from './models.js'
+import {Component} from 'react'
+
 
 export const AllListingsView = React.createClass({
 
@@ -78,6 +80,7 @@ export const Body = React.createClass({
 						<Hamburguesa />
 						<input type="checkbox" className="hamburguesa-menu-toggler"></input>
 						<Nav />
+						<SliderFrame />
 						<SearchBar />
 					</div>
 		}
@@ -99,14 +102,103 @@ export const Footer = React.createClass({
 		}
 })
 
-export const MainImg = React.createClass({
+export const SlideShow = React.createClass({
+
 		render: function() {
 			return  (
-				<div className="mainImg">
-	        		<img className="headlineImg" src="./images/AsILayDyingwallpaper.jpg"></img>
-	    		</div>
+				<div id="slideshow">
+	   				<div>
+	     				<img className="slideImg" src={'http://lifemusicmedia.com/wp-content/uploads/2014/04/2014_KillswitchEngage_09-L.jpg'} />
+	   				</div>
+	   				<div>
+	     				<img className="slideImg" src={'http://www.overdrive.ie/wp-content/uploads/2013/10/Killswitch-Engage-live.jpg'} />
+   					</div>
+	   				<div>
+	     				<img className="slideImg" src={'http://concart.net/files/2016/07/killswitch_engage_live_chicago_open_air_2016-03-1918x1280.jpg'} />
+	   				</div>
+
+	   				<div>
+	     				<img className="slideImg" src={'http://hmmagazine.com/wp-content/themes/hm2016/timthumb.php?src=http://cdn.hmmagazine.com/wp-content/uploads/2016/03/06122448/for-today-3.jpg&w=1200&zc=1'} />
+	   				</div>
+   					
+				</div>
 	    	)
 		}
+})
+
+// export const Slider = React.createClass({
+// 	render: function() {
+// 		return (
+// 		<div id="wowslider-container1">
+// 			<div className="ws_images">
+// 				<ul>
+// 					<li><img src="data1/images/adamd.jpg" alt="" title="" id="wows1_0"/></li>
+// 					<li><img src="data1/images/betweentheburiedandme1.jpg" alt="" title="" id="wows1_1"/></li>
+// 					<li><img src="data1/images/bornofosiris1.jpg" alt="" title="" id="wows1_2"/></li>
+// 					<li><img src="data1/images/dayseeker1.jpg" alt="" title="" id="wows1_3"/></li>
+// 					<li><img src="data1/images/jesseleach.jpg" alt="" title="" id="wows1_4"/></li>
+// 					<li><img src="data1/images/jobforacowboy1.jpg" alt="" title="" id="wows1_5"/></li>
+// 					<li><img src="data1/images/live1.jpg" alt="" title="" id="wows1_6"/></li>
+// 					<li><img src="data1/images/megadeth1.jpg" alt="" title="" id="wows1_7"/></li>
+// 					<li><img src="data1/images/soad1.jpg" alt="" title="" id="wows1_8"/></li>
+// 					<li><img src="data1/images/tigersjaw2.jpg" alt="" title="" id="wows1_9"/></li>
+// 					<li><img src="data1/images/underoathlive1.jpg" alt="" title="" id="wows1_10"/></li>
+// 					<li><img src="data1/images/adtr1.jpg" alt="" title="" id="wows1_11"/></li>
+// 					<li><img src="data1/images/adtr2.jpg" alt="" title="" id="wows1_12"/></li>
+// 					<li><img src="data1/images/deftones1.jpg" alt="" title="" id="wows1_13"/></li>
+// 					<li><img src="data1/images/kse1.jpg" alt="" title="" id="wows1_14"/></li>
+// 					<li><a href="http://wowslider.com/vi"><img src="data1/images/tigersjaw1.jpg" alt="cssslider" title="" id="wows1_15"/></a></li>
+// 					<li><img src="data1/images/trivium1.jpg" alt="" title="" id="wows1_16"/></li>
+// 				</ul>
+// 			</div>
+// 			<div className="ws_bullets">
+// 				<div>
+// 					<a href="#" title=""><span><img src="data1/tooltips/adamd.jpg" alt=""/>1</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/betweentheburiedandme1.jpg" alt=""/>2</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/bornofosiris1.jpg" alt=""/>3</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/dayseeker1.jpg" alt=""/>4</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/jesseleach.jpg" alt=""/>5</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/jobforacowboy1.jpg" alt=""/>6</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/live1.jpg" alt=""/>7</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/megadeth1.jpg" alt=""/>8</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/soad1.jpg" alt=""/>9</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/tigersjaw2.jpg" alt=""/>10</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/underoathlive1.jpg" alt=""/>11</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/adtr1.jpg" alt=""/>12</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/adtr2.jpg" alt=""/>13</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/deftones1.jpg" alt=""/>14</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/kse1.jpg" alt=""/>15</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/tigersjaw1.jpg" alt=""/>16</span></a>
+// 					<a href="#" title=""><span><img src="data1/tooltips/trivium1.jpg" alt=""/>17</span></a>
+// 				</div>
+// 			</div>
+// 				<div className="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">bootstrap carousel</a> by WOWSlider.com v8.7.1m
+// 				</div>
+// 			<div className="ws_shadow"></div>
+// 		</div>	
+
+// 		)
+// 	}
+// })
+
+export const SliderFrame = React.createClass({
+	render: function () {
+		return (
+			
+			<iframe src={"wowslider-iframe.html"} style="width:800px;height:600px;max-width:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe>
+			
+		)
+	}
+})
+
+export const MainImg = React.createClass({
+	render: function() {
+		return (
+				<div>
+	     			<img src='http://lifemusicmedia.com/wp-content/uploads/2014/04/2014_KillswitchEngage_09-L.jpg' />
+	   			</div>
+		)
+	}
 })
 
 export const SearchBar = React.createClass({
@@ -130,7 +222,8 @@ export const SearchBar = React.createClass({
 
 export const Header = React.createClass({
 		render: () => {
-			return <header>
+			return  (
+				<header>
 	        			<h1><a href="#home">Riffsy</a></h1>
 	        			<div className="iconBox">
 	        				<a href="#home"><i className="fa fa-home"></i></a>
@@ -138,7 +231,8 @@ export const Header = React.createClass({
 	        				<i className="fa fa-user"></i>
 	        				<i className="fa fa-shopping-cart" aria-hidden="true"></i>
 	        			</div>
-	    			</header>
+	    		</header>
+	    	)
 		}
 
 })
@@ -173,8 +267,6 @@ export const Nav = React.createClass({
 	    	)
 		}
 })
-
-
 
 export const Listing = React.createClass({
 

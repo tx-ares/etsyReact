@@ -2,6 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
+import $ from 'jquery'
 
 //Collections
 import {AllListingsCollection} from './models.js'
@@ -13,6 +14,18 @@ import {AllListingsView} from './views.js'
 import {SingleListingView} from './views.js'
 import {SearchView} from './views.js'
 
+// Slide Show Start //
+		// $("#slideshow > div:gt(0)").hide();
+
+		// setInterval(function() { 
+		//   $('#slideshow > div:first')
+		//     .fadeOut(5000)
+		//     .next()
+		//     .fadeIn(3000)
+		//     .end()
+		//     .appendTo('#slideshow');
+		// },  10000);
+//////////////////////
 
 const app = function() {
 
@@ -88,6 +101,7 @@ const app = function() {
 	},
 
 	initialize: function() {
+
 		Backbone.history.start()
 	}
 
