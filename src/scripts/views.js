@@ -2,6 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Models from './models.js'
 import {Component} from 'react'
+// import Iframe from 'react-iframe'
+
+var Iframe = require('react-iframe')
 
 
 export const AllListingsView = React.createClass({
@@ -74,13 +77,15 @@ export const SingleListingView = React.createClass({
 })
 
 export const Body = React.createClass({
-		render: () => {
+		render: function () {
 			return <div>
 						<Header />
 						<Hamburguesa />
 						<input type="checkbox" className="hamburguesa-menu-toggler"></input>
 						<Nav />
-						<SliderFrame />
+
+						<Iframe className="iframe" url="./wowslider-iframe.html" style="width:800px;height:600px;max-width:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginHeight="0" marginWidth="0"></Iframe>
+
 						<SearchBar />
 					</div>
 		}
@@ -102,29 +107,29 @@ export const Footer = React.createClass({
 		}
 })
 
-export const SlideShow = React.createClass({
+// export const SlideShow = React.createClass({
 
-		render: function() {
-			return  (
-				<div id="slideshow">
-	   				<div>
-	     				<img className="slideImg" src={'http://lifemusicmedia.com/wp-content/uploads/2014/04/2014_KillswitchEngage_09-L.jpg'} />
-	   				</div>
-	   				<div>
-	     				<img className="slideImg" src={'http://www.overdrive.ie/wp-content/uploads/2013/10/Killswitch-Engage-live.jpg'} />
-   					</div>
-	   				<div>
-	     				<img className="slideImg" src={'http://concart.net/files/2016/07/killswitch_engage_live_chicago_open_air_2016-03-1918x1280.jpg'} />
-	   				</div>
+// 		render: function() {
+// 			return  (
+// 				<div id="slideshow">
+// 	   				<div>
+// 	     				<img className="slideImg" src={'http://lifemusicmedia.com/wp-content/uploads/2014/04/2014_KillswitchEngage_09-L.jpg'} />
+// 	   				</div>
+// 	   				<div>
+// 	     				<img className="slideImg" src={'http://www.overdrive.ie/wp-content/uploads/2013/10/Killswitch-Engage-live.jpg'} />
+//    					</div>
+// 	   				<div>
+// 	     				<img className="slideImg" src={'http://concart.net/files/2016/07/killswitch_engage_live_chicago_open_air_2016-03-1918x1280.jpg'} />
+// 	   				</div>
 
-	   				<div>
-	     				<img className="slideImg" src={'http://hmmagazine.com/wp-content/themes/hm2016/timthumb.php?src=http://cdn.hmmagazine.com/wp-content/uploads/2016/03/06122448/for-today-3.jpg&w=1200&zc=1'} />
-	   				</div>
+// 	   				<div>
+// 	     				<img className="slideImg" src={'http://hmmagazine.com/wp-content/themes/hm2016/timthumb.php?src=http://cdn.hmmagazine.com/wp-content/uploads/2016/03/06122448/for-today-3.jpg&w=1200&zc=1'} />
+// 	   				</div>
    					
-				</div>
-	    	)
-		}
-})
+// 				</div>
+// 	    	)
+// 		}
+// })
 
 // export const Slider = React.createClass({
 // 	render: function() {
@@ -182,10 +187,12 @@ export const SlideShow = React.createClass({
 // })
 
 export const SliderFrame = React.createClass({
+	
+
 	render: function () {
 		return (
 			
-			<iframe src={"wowslider-iframe.html"} style="width:800px;height:600px;max-width:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginheight="0" marginwidth="0"></iframe>
+			<iframe src={"wowslider-iframe.html"} style="width:800px;height:600px;max-width:100%;overflow:hidden;border:none;padding:0;margin:0 auto;display:block;" marginHeight="0" marginWidth="0"></iframe>
 			
 		)
 	}
@@ -272,9 +279,9 @@ export const Listing = React.createClass({
 
 	render: function() {
 		var model = this.props.listMod
-		// console.log(model, "<<< Single listing rendered!")
+		console.log(model, "<<< Single listing rendered!")
 
-		return ( <div className="listing" id={model.get('listing_id')}>
+		return ( <div className="listing" id={model.get('cid')}>
 
 					<a href={"#itemListing/" + model.get('listing_id')}>
 						<img src={model.get('Images')[0].url_570xN} /> 
