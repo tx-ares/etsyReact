@@ -1,38 +1,12 @@
-#TIY Starter Kit
 
-Lightweight scaffolding and build tools to quickly and easily develop a web application. 
+Search for items using Etsy's API!  Currently, purchase buttons will link you directly to Etsy's item listing.  This was built using following MVC pattern using React for views, Backbone for route controller and models.
 
-  - transpiles scss into css
-  - transpiles es6 and jsx into es5
-  - concatenates all required/imported modules together into one minified file
-  - runs a simple express server that is deployable on heroku
-  
-##Getting started
+![Picture](https://github.com/TxsAdamWest/etsyReact/blob/master/RiffsySS/ss3.png)
 
-  - clone this repo with `git clone git@github.com:magentanova/tiy-starter-kit.git THE-LOCAL-FOLDER-YOU-WANT-TO-CREATE`
-  - disconnect from my remote repo and point to your own (see [Publishing](#publishing))
-  - `cd` into the local folder
-  - `npm install`
-  - `npm run go`
-  - that's it! visit [http://localhost:3000](http://localhost:3000) to make sure it's working
-  
-##Workflow
-  
-  - you'll *only* write code in the files in the `src/` folder
-  - every time you save in that folder, your code will be read and transpiled into the `dist/` folder. only files in `dist/` will be served up to the browser.
-  - view and test your app at localhost:3000
-  
-##Publishing
+![Picture](https://github.com/TxsAdamWest/etsyReact/blob/master/RiffsySS/ss4.png)
 
-  - disconnect your local repo from this one with `git remote remove origin`
-  - `hub create YOUR-APP-NAME` -- this will simultaneously (1) create you a remote repo with the given name and (2) create a local reference connecting the directory you're in to the remote you just created
-  - add, commit and push per usual
+![Picture](https://github.com/TxsAdamWest/etsyReact/blob/master/RiffsySS/ss1.png)
 
-##Deploying 
+![Picture](https://github.com/TxsAdamWest/etsyReact/blob/master/RiffsySS/ss2.png)
 
-The easiest thing to do is deploy to heroku. Once you have an account and you've installed the heroku command line tools, simply run: 
- 
-  - `heroku create YOUR-APP-NAME`
-  - `git push heroku master`
 
-Have fun!
