@@ -1,15 +1,17 @@
-/* Mobile First Styles */
-
-// @media only screen and (max-width: 445px) {
-//     .container {
-//         overflow: auto;
-//         width: fixed;
-//     }
-// }
+/***************************/
 
 
-/* Media Query Below for Tablet and Desktop */
+/* MOBILE FIRST SIZES      */
 
+
+/***************************/
+
+@media only screen and (max-width: 445px) {
+    .container {
+        overflow: auto;
+        width: fixed;
+    }
+}
 
 /* Default Styles */
 
@@ -28,7 +30,6 @@ body {
     background-color: black;
     color: white;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    // font-size: 12px;
 }
 
 img {
@@ -75,7 +76,9 @@ a:hover {
 
 header {
     font-family: 'If';
-    background: black;
+    background: url("http://lifemusicmedia.com/wp-content/uploads/2014/04/2014_KillswitchEngage_09-L.jpg");
+    background-size: cover;
+    height: 30vh;
     border-bottom: 4px solid #83c7b7;
 }
 
@@ -143,7 +146,6 @@ nav {
     border-bottom: 2px solid darkslategray;
     margin-top: 20px;
     text-align: center;
-    // background-image: url("../images/AsILayDyingwallpaper.jpg");
 }
 
 ul {
@@ -186,13 +188,15 @@ input.hamburguesa-menu-toggler:checked + nav {
 
 /* Main Image Styles */
 
-.mainImg {
-    background-image: url('../../images/AsILayDyingwallpaper.jpg');
-}
+// Unused banner
 
-.headlineImg {
-    width: 100%;
-}
+// .mainImg {
+//     background-image: url('../../images/AsILayDyingwallpaper.jpg');
+// }
+
+// .headlineImg {
+//     width: 100%;
+// }
 
 .search {
     text-align: center;
@@ -212,7 +216,7 @@ input.hamburguesa-menu-toggler:checked + nav {
     overflow: scroll;
     vertical-align: top;
     border-radius: 5px;
-    padding: 4px 4%;
+    padding: 4px 2%;
     border: 8px solid #83c7b7;
     border-radius: 5px 5px 5px 5px;
 }
@@ -278,6 +282,12 @@ footer li h5{
 
 @media only screen and (min-width: 670px) {
 
+    header {
+        height: 55vh;
+        background-size: cover;
+        background-position: 0 -24px;
+    }
+
     .hamburguesa {
         display: none;
     }
@@ -334,9 +344,8 @@ footer li h5{
 
     .imgContainer {
     display: inline-block;
-    // border: 2px solid lime;
-    width: 50%;
-    margin-right: 10px;
+    width: 48%;
+    margin-right: 16px;
 }
 
 .details {
