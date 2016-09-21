@@ -7,6 +7,7 @@
     "go": "npm run watch && npm run start",
     "start": "node --use_strict server.js",
     "stop": "bash kill.sh",
+    "publish:gh-pages": "git add . && git commit -am 'cleaning up any staged and uncomitted changes'; git checkout master; npm-run-all postinstall && git subtree split --prefix dist -b autobuilder && git checkout autobuilder && cp dist/app.js . && cp dist/style.css . && git add app.js style.css && git commit -am 'cleaning and pushing' && git push origin autobuilder:gh-pages --force; git checkout master; git branch -Dq autobuilder; echo 'done';",
     "watch": "npm run watch-js && npm run watch-css && echo '\n\n===== watching js and scss files in src/, writing changes to dist/ =====\n\n'&",
     "watch-js": "./node_modules/.bin/watchify src/scripts/app.js --debug --verbose --transform babelify -o dist/assets/js/app.js&",
     "watch-css": "./node_modules/.bin/node-sass -w --output-style compressed src/styles/style.scss dist/assets/css/style.css&"
