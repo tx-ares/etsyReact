@@ -1,10 +1,8 @@
 const bodyParser = require('body-parser')
 const express = require('express')
 const renderFile = require('ejs').renderFile
-<<<<<<< HEAD
-=======
 
->>>>>>> b94bf6ee38ad7f4e1614458ea4b141559fbb7c07
+
 const app = express()
 
 const theRoot = __dirname + '/dist/',
