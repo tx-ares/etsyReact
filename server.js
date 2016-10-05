@@ -1,8 +1,6 @@
 const bodyParser = require('body-parser')
 const express = require('express')
 const renderFile = require('ejs').renderFile
-const Iframe = require('react-iframe') //Installed for Iframe dependency
-
 const app = express()
 
 const theRoot = __dirname + '/dist/',
