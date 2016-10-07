@@ -1,5 +1,5 @@
 
-Search for items using Etsy's API!  Currently, purchase buttons will link you directly to Etsy's item listing.  This was built using following MVC pattern using React for views, Backbone for route controller and models.
+Search for items using Etsy's API!  Currently, purchase buttons will link you directly to Etsy's item listing.  This was built using following MVC pattern using React for views, Backbone for route controller and models.  All CSS styles done by scratch including mobile responsiveness.  
 
 ![Picture](https://github.com/TxsAdamWest/etsyReact/blob/master/RiffsySS/ss3.png)
 
